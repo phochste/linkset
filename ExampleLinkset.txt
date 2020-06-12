@@ -1,0 +1,227 @@
+{"@context": {
+    "@vocab": "http://www.iana.org/assignments/relation/",
+    "anchor":"@id",
+    "href":"@id",
+    "linkset": "@graph",
+    "_linkset": "@graph",
+    "dcterms": "http://purl.org/dc/terms/",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "gs1": "https://gs1.org/voc/",
+    "hreflang": {"@id":"http://purl.org/dc/terms/language","@container": "@set"},
+    "title": {"@id":"http://purl.org/dc/terms/title"},
+    "title*": {"@id":"http://purl.org/dc/terms/title"},
+    "type": {"@id":"http://purl.org/dc/terms/format" },
+    "creator": {"@id":"http://purl.org/dc/terms/creator"},
+    "modified": {"@id":"http://purl.org/dc/terms/modified"},
+    "_comment": {"@id":"https://ontologi.es/doap-bugs#comment"},
+    "itemDescription": {"@id":"http://www.w3.org/2000/01/rdf-schema#comment"},
+    "language": "@language",
+    "value":"@value"
+  },
+"data": [
+  {
+  "linkset": [
+    {
+      "creator": "https://dalgiardino.com/contact",
+      "modified" : "2020-05-28",
+      "_comment": "Add any more metadata here that applies to all the links, poss including Dal Giardino's digital signature"
+    },
+    {
+      "anchor": "https://id.gs1.org/01/09506000134352",
+      "itemDescription": "Dal Giardino Risotto Rice with Mushrooms 411g",
+      "https://gs1.org/voc/defaultLink": [
+        {
+          "href": "https://dalgiardino.com/risotto-rice-with-mushrooms/"
+        },
+        {
+          "href": "https://dalgiardino.com/risotto-rice-with-mushrooms/index.html.es",
+          "hreflang": ["es"]
+        },
+        {
+          "href": "https://dalgiardino.com/risotto-rice-with-mushrooms/index.html.vi",
+          "hreflang": ["vi"]
+        },
+        {
+          "href": "https://dalgiardino.com/risotto-rice-with-mushrooms/index.html.ja",
+          "hreflang": ["ja"]
+        }
+      ],
+      "https://gs1.org/voc/pip": [
+        {
+          "href": "https://dalgiardino.com/risotto-rice-with-mushrooms/",
+          "hreflang": ["en", "es", "vi", "ja"],
+    		  "title": "Product information",
+          "title*": [ { "value": "Product information" , "language" : "en" }, { "value": "Información del Producto" , "language" : "es" }, { "value": "Trang thông tin sản phẩm" , "language" : "vi" } ]
+        },
+        {
+          "href": "https://dalgiardino.com/risotto-rice-with-mushrooms/index.html.es",
+          "hreflang": ["es"],
+    		  "title": "Información del Producto"
+        },
+        {
+          "href": "https://dalgiardino.com/risotto-rice-with-mushrooms/index.html.vi",
+          "hreflang": ["vi"],
+    		  "title": "Trang thông tin sản phẩm"
+        }
+      ],
+      "https://gs1.org/voc/hasRetailers": [
+        {
+          "href": "https://dalgiardino.com/where-to-buy/",
+          "hreflang": ["en", "es", "vi"],
+          "title": "Where to buy",
+          "title*": [ { "value": "Where to buy" , "language" : "en" }, { "value": "Donde comprar" , "language" : "es" }, { "value": "Nơi bán" , "language" : "vi" } ]
+        },
+        {
+          "href": "https://dalgiardino.com/where-to-buy/index.html.es",
+  	   	  "hreflang": ["es"],
+    		  "title": "Donde comprar"
+        },
+        {
+          "href": "https://dalgiardino.com/where-to-buy/index.html.vi",
+  	   	  "hreflang": ["vi"],
+    		  "title": "Nơi bán"
+        }
+      ],
+      "https://gs1.org/voc/recipeInfo": [
+        {
+          "href": "https://dalgiardino.com/mushroom-squash-risotto/",
+          "hreflang": ["en", "es", "ja"],
+    		  "title": "Wild Mushroom And Butternut Squash Risotto",
+          "title*": [ { "value": "Wild Mushroom And Butternut Squash Risotto" , "language" : "en" }, { "value": "Recetas" , "language" : "es" }, { "value": "キノコと砕いたバターナッツ入りのリゾット" , "language" : "ja" } ]
+        },
+        {
+          "href": "https://dalgiardino.com/mushroom-squash-risotto/index.html.es",
+          "hreflang": ["es"],
+    		  "title": "Recetas"
+        },
+        {
+          "href": "https://dalgiardino.com/mushroom-squash-risotto/index.html.ja",
+          "hreflang": ["ja"],
+    		  "title": "キノコと砕いたバターナッツ入りのリゾット"
+        }
+      ],
+      "https://gs1.org/voc/productSustainabilityInfo": [
+        {
+          "href": "https://dalgiardino.com/about/",
+          "hreflang": ["en", "es", "vi"],
+    		  "title": "About Dal Giardino",
+          "title*": [ { "value": "About Dal Giardino" , "language" : "en" }, { "value": "Sobre Dal Giardino" , "language" : "es" }, { "value": "Phát triển bền vững và t" , "language" : "vi" } ]
+        },
+        {
+          "href": "https://dalgiardino.com/about/index.html.es",
+          "hreflang": ["es"],
+    		  "title": "Sobre Dal Giardino"
+        },
+        {
+          "href": "https://dalgiardino.com/about/index.html.vi",
+          "hreflang": ["vi"],
+    		  "title": "Phát triển bền vững và t"
+        }
+      ]
+    },
+    {
+      "anchor": "https://id.gs1.org/01/09506000134369",
+      "itemDescription": "Dal Giardino Extra Virgin Olive Oil Exclusive Selection 1L",
+      "https://gs1.org/voc/defaultLink": [
+        {
+          "href": "https://dalgiardino.com/extra-virgin-olive-oil/"
+        },
+        {
+          "href": "https://dalgiardino.com/extra-virgin-olive-oil/index.html.es",
+          "hreflang": ["es"]
+        },
+        {
+          "href": "https://dalgiardino.com/extra-virgin-olive-oil/index.html.vi",
+          "hreflang": ["vi"]
+        }
+      ],
+      "https://gs1.org/voc/pip": [
+        {
+          "href": "https://dalgiardino.com/extra-virgin-olive-oil/",
+          "hreflang": ["en", "ja"],
+    		  "title": "Product information",
+          "title*": [ { "value": "Product information" , "language" : "en" }, { "value": "Product information" , "language" : "ja" } ]
+        },
+        {
+          "href": "https://dalgiardino.com/extra-virgin-olive-oil/index.html.ja",
+          "hreflang": ["ja"],
+    		  "title": "Product information"
+        }
+      ],
+      "https://gs1.org/voc/hasRetailers": [
+        {
+          "href": "https://dalgiardino.com/where-to-buy/",
+		      "hreflang": ["en", "es", "vi"],
+          "title": "Where to buy",
+          "title*": [ { "value": "Where to buy" , "language" : "en" }, { "value": "Donde comprar" , "language" : "es" }, { "value": "Nơi bán" , "language" : "vi" } ]
+        },
+        {
+          "href": "https://dalgiardino.com/where-to-buy/index.html.es",
+  	   	  "hreflang": ["es"],
+    		  "title": "Donde comprar"
+        },
+        {
+          "href": "https://dalgiardino.com/where-to-buy/index.html.vi",
+  	   	  "hreflang": ["vi"],
+    		  "title": "Nơi bán"
+        }
+      ],
+      "https://gs1.org/voc/productSustainabilityInfo": [
+        {
+          "href": "https://dalgiardino.com/about/",
+          "hreflang": ["en", "es", "vi"],
+    		  "title": "About Dal Giardino",
+          "title*": [ { "value": "About Dal Giardino" , "language" : "en" }, { "value": "Sobre Dal Giardino" , "language" : "es" }, { "value": "Phát triển bền vững và t" , "language" : "vi" } ]
+        },
+        {
+          "href": "https://dalgiardino.com/about/index.html.es",
+          "hreflang": ["es"],
+    		  "title": "Sobre Dal Giardino"
+        },
+        {
+          "href": "https://dalgiardino.com/about/index.html.vi",
+          "hreflang": ["vi"],
+    		  "title": "Phát triển bền vững và t"
+        }
+      ]
+    },
+    {
+      "anchor": "https://id.gs1.org/01/09506000134376",
+      "itemDescription": "Dal Giardino Medicinal Compound", 
+      "https://gs1.org/voc/defaultLink": [
+        {
+          "href": "https://dalgiardino.com/medicinal-compound/pil.html"
+        }
+      ],
+      "https://gs1.org/voc/epil": [
+        {
+          "href": "https://dalgiardino.com/medicinal-compound/pil.html"
+        }
+      ],
+      "https://gs1.org/voc/pip": [
+        {
+          "href": "https://dalgiardino.com/medicinal-compound/"
+        }
+      ]
+    }
+  ]},
+  {
+  "linkset": [
+    {
+      "creator": "https://someoneelse.example/contact",
+      "modified" : "2020-06-12",
+      "_comment": "More metadata about this linkset"
+    },
+    {
+      "anchor": "https://id.gs1.org/01/{gtin}",
+      "itemDescription": "Something", 
+      "https://gs1.org/voc/defaultLink": [
+        {
+          "href": "https://someoneelse.example/foo"
+        }
+      ]
+    }
+  ]}
+]}
