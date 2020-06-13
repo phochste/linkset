@@ -11,16 +11,21 @@
     "gs1": "https://gs1.org/voc/",
     "hreflang": {"@id":"http://purl.org/dc/terms/language","@container": "@set"},
     "title": {"@id":"http://purl.org/dc/terms/title"},
-    "title*": {"@id":"http://purl.org/dc/terms/title"},
+    "title*": {"@id":"http://purl.org/dc/terms/title","@container": "@set"},
     "type": {"@id":"http://purl.org/dc/terms/format" },
     "creator": {"@id":"http://purl.org/dc/terms/creator"},
     "modified": {"@id":"http://purl.org/dc/terms/modified"},
     "_comment": {"@id":"https://ontologi.es/doap-bugs#comment"},
     "itemDescription": {"@id":"http://www.w3.org/2000/01/rdf-schema#comment"},
+    "dataset": {"@id": "https://id.gs1.org/dataset/{refID}"},
     "language": "@language",
     "value":"@value"
   },
-"data": [
+  "dataset": [
+  {
+    "_comment": "Metadata about the data file itself, probably including a time stamp, resolver as *origin* but *not author*",
+    "_comment": "Trying to work out how to give the dataset as a whole an ID of https://{resolver}/{resolver-generated-ID} and type is as a dcat:Dataset & schema:Dataset - obivously haven't got this right yet."
+  },
   {
   "linkset": [
     {
