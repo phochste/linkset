@@ -1,4 +1,5 @@
-{"@context": {
+{
+  "@context": {
     "@vocab": "http://www.iana.org/assignments/relation/",
     "anchor":"@id",
     "href":"@id",
@@ -10,12 +11,12 @@
     "xsd": "http://www.w3.org/2001/XMLSchema#",
     "gs1": "https://gs1.org/voc/",
     "schema": "http://schema.org/",
-    "dcat": "http://www.w3.org/ns/dcat#",
     "hreflang": {"@id":"http://purl.org/dc/terms/language","@container": "@set"},
     "title": {"@id":"http://purl.org/dc/terms/title"},
     "title*": {"@id":"http://purl.org/dc/terms/title","@container": "@set"},
     "type": {"@id":"http://purl.org/dc/terms/format" },
     "creator": {"@id":"http://purl.org/dc/terms/creator"},
+    "creatorName": {"@id":"http://purl.org/dc/elements/1.1/creator"},
     "modified": {"@id":"http://purl.org/dc/terms/modified"},
     "_comment": {"@id":"https://ontologi.es/doap-bugs#comment"},
     "itemDescription": {"@id":"http://www.w3.org/2000/01/rdf-schema#comment"},
@@ -23,20 +24,15 @@
     "a":"@type", 
     "language": "@language",
     "value":"@value"
-  },
-  "dataset": [
-  {
-      "id":"https://id.gs1.org/dataset/{refID}",
-      "a":["dcat:Dataset","schema:Dataset"],
-    "_comment": "Metadata about the data file itself, probably including a time stamp, resolver as *origin* but *not author*",
-    "_comment": "Trying to work out how to give the dataset as a whole an ID of https://{resolver}/{resolver-generated-ID} and type is as a dcat:Dataset & schema:Dataset - obivously haven't got this right yet."
-  },
-  {
+  }
+,
+
   "linkset": [
     {
-      "creator": "https://dalgiardino.com/contact",
+      "creator": "https://id.gs1.org/414/{primaryGLN}",
+      "creatorName": "Dal Giardino, a fictitious brand",
       "modified" : "2020-05-28",
-      "_comment": "Add any more metadata here that applies to all the links, poss including Dal Giardino's digital signature"
+      "_comment": "Value of dcterms:creator is a URI. If we have a primary GLN, we can use that. If not, provide a URL of a contact page. This is different from dc:creator which takes a string as the value. Add any more metadata here that applies to all the links, poss including Dal Giardino's digital signature"
     },
     {
       "anchor": "https://id.gs1.org/01/09506000134352",
@@ -216,22 +212,5 @@
         }
       ]
     }
-  ]},
-  {
-  "linkset": [
-    {
-      "creator": "https://someoneelse.example/contact",
-      "modified" : "2020-06-12",
-      "_comment": "More metadata about this linkset"
-    },
-    {
-      "anchor": "https://id.gs1.org/01/{gtin}",
-      "itemDescription": "Something", 
-      "https://gs1.org/voc/defaultLink": [
-        {
-          "href": "https://someoneelse.example/foo"
-        }
-      ]
-    }
-  ]}
-]}
+  ]
+}
