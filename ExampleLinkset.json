@@ -49,18 +49,6 @@
         {
           "href": "https://dalgiardino.com/risotto-rice-with-mushrooms/"
           "_comment": "href is a mandatory field for each link item."
-        },
-        {
-          "href": "https://dalgiardino.com/risotto-rice-with-mushrooms/index.html.es",
-          "hreflang": ["es"]
-        },
-        {
-          "href": "https://dalgiardino.com/risotto-rice-with-mushrooms/index.html.vi",
-          "hreflang": ["vi"]
-        },
-        {
-          "href": "https://dalgiardino.com/risotto-rice-with-mushrooms/index.html.ja",
-          "hreflang": ["ja"]
         }
       ],
       "https://gs1.org/voc/pip": [
