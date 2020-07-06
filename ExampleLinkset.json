@@ -32,23 +32,16 @@
       "creator": "https://id.gs1.org/414/{primaryGLN}",
       "creatorName": "Dal Giardino, a fictitious brand",
       "modified" : "2020-05-28",
-      "_comment": "Value of dcterms:creator is a URI. If we have a primary GLN,
-      we can use that. If not, provide a URL of a contact page.
-      This is different from dc:creator which takes a string as the value.
-      Add any more metadata here that applies to all the links,
-      possibly including Dal Giardino's digital signature"
+      "_comment": "Value of dcterms:creator is a URI. If we have a primary GLN, we can use that. If not, provide a URL of a contact page. This is different from dc:creator which takes a string as the value. Add any more metadata here that applies to all the links, possibly including Dal Giardino's digital signature"
     },
     {
       "anchor": "https://id.gs1.org/01/09506000134352",
-      "_comment" : "anchor is a mandatory member with a value that represents
-      the link context."
+      "_comment" : "anchor is a mandatory member with a value that represents the link context.",
       "itemDescription": "Dal Giardino Risotto Rice with Mushrooms 411g",
       "https://gs1.org/voc/defaultLink": [
-        "_comment" : "for each distinct relation we need
-        either a URI or an IANA registered relation type"
         {
-          "href": "https://dalgiardino.com/risotto-rice-with-mushrooms/"
-          "_comment": "href is a mandatory field for each link item."
+          "href": "https://dalgiardino.com/risotto-rice-with-mushrooms/",
+          "_comment": "There is just the href for the default. No other attributes"
         }
       ],
       "https://gs1.org/voc/pip": [
