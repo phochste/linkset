@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Linkset visualization demo</title>
+  <script src="gs1LinksetViz.js"></script>
+  <link rel="stylesheet" href="gs1LinksetViz.css" title="Basic linkset layout styles" />
+
+  <style type="text/css">
+    body {font-family: sans-serif}
+
+    span#useDemo {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+
+    #linksetInput {
+      margin-top: 2em;
+      width:1000px;
+      max-width:100%;
+      overflow:auto;
+      white-space: nowrap;
+      height:300px
+    }
+
+    button {
+      background-color: #F26334;
+      color: white;
+      padding: 1em;
+      border: thin solid #002c6c;
+  </style>
+</head>
+<body>
+
+<header><h1>Linkset visualization demo</h1></header>
+<main>
+<p>This page demonstrates the GS1 linkset visualization library. Paste your own linkset into the window or <span id="useDemo">use the demo</span>.</p>
+
+<section id="inputArea">
+  <textarea id="linksetInput"></textarea>
+  <button id="refresh">Visualize</button>
+</section>
+
+<section id="linksetVizualization"></section>
+
+</main>
+
+
+<script>
+// Scripting here is just needed for this demo page, it's not part of the actual visualisation library.
+
+const demoLinkset = {
+  "linkset": [
+    {
+      "anchor": "https://example.com/01/614141123452",
+      "itemDescription": "Dal Giardino's world famous Risotto Rice with Mushrooms ",
+      "unixtime":1606376889,
+      "https://gs1.org/voc/defaultLink": [
+        {
+          "href": "https://dalgiardino.com/risotto-rice-with-mushrooms/",
+          "title": "Product information"
+        }
+      ],
+      "https://gs1.org/voc/defaultLink*": [
+        {
+          "href": "https://dalgiardino.com/risotto-rice-with-mushrooms/index.html.vi",
+          "hreflang": ["vi"],
+    		  "title": "Product information"
+        },
+        {
+          "href": "https://dalgiardino.com/risotto-rice-with-mushrooms/index.html.es",
+          "hreflang": ["es"],
+    		  "title": "Información del Producto"
+        }
+      ],
+      "https://gs1.org/voc/pip": [
+        {
+          "href": "https://example.com/en/defaultPage",
+          "hreflang": ["en"],
+          "type": "text/html",
+    		  "title": "Product information"
+        },
+        {
+          "href": "https://example.com/fr/defaultPage",
+          "hreflang": ["fr"],
+    		  "title": "Information produit"
+        }
+      ],
+      "https://gs1.org/voc/whatsInTheBox": [
+        {
+          "href": "https://example.com/en/packContents/GB",
+          "hreflang": ["en"],
+          "title": "What's in the box?",
+          "context": "GB"
+        },
+        {
+          "href": "https://example.com/fr/packContents/FR",
+          "hreflang": ["fr"],
+          "title": "Qu'y a-t-il dans la boite?",
+          "context": "FR"
+        },
+        {
+          "href": "https://example.com/fr/packContents/CH",
+          "hreflang": ["fr"],
+          "title": "Qu'y a-t-il dans la boite?",
+          "context": "CH"
+        }
+      ],
+      "https://gs1.org/voc/relatedVideo": [
+        {
+          "href": "https://video.example",
+          "hreflang": ["en", "fr"],
+          "title*": [ { "value": "See it in action!" , "language" : "en" }, { "value": "Voyez-le en action!" , "language" : "fr" } ],
+          "fwqs": false
+        }
+      ]
+    }
+  ]
+}
+
+
+window.onload = setup;
+
+function setup() {
+  let linkset = document.getElementById('linksetInput').value;
+  let displayElement = document.getElementById('linksetVizualization');
+  let r = document.getElementById('refresh');
+  r.addEventListener('click', function() {
+    linkset = JSON.parse(document.getElementById('linksetInput').value);
+    linksetViz(linkset, displayElement);
+    displayElement.scrollIntoView();
+  }, false);
+
+  let d = document.getElementById('useDemo');
+  d.addEventListener('click', function() {
+    document.getElementById('linksetInput').value = JSON.stringify(demoLinkset, undefined, 2);
+  }, false);
+}
+
+</script>
+
+</body></html>

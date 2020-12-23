@@ -1,0 +1,30 @@
+/* These are just some basic CSS rules to help layout the linkset for easier human-reading
+   Even if used, you're likely to want to do more
+*/
+
+p.metaElement span.metaTitle {
+  width: 10em;
+  display: inline-block;
+}
+
+dl#linkList dd.href, dl#linkList dt.linkType {
+  margin-top:0.5em;
+}
+
+dl#linkList dd span {
+  display: inline-block;
+  width:7em;
+}
+
+dl#linkList dd span.toTitle {
+  margin-left: 7em;
+}
+
+dl#linkList dd.href span.toTitle {
+  margin-left: 0;
+}
+
+.error {
+  background-color: red;
+  color: white;
+}
