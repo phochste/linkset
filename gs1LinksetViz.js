@@ -55,8 +55,8 @@ function linksetViz(lsIn, displayElement) {
           span.className = metaTitleClass;
           span.appendChild(document.createTextNode('Last modified: '));
           p.appendChild(span);
-          let d = new Date(linkset[context].unixtime);
-          p.appendChild(document.createTextNode(d.toISOString()));
+          let d = new Date(linkset[context].unixtime*1000);
+          p.appendChild(document.createTextNode(d.toISOString().replace('.000Z','Z')));
           displayElement.appendChild(p);
         }
 
