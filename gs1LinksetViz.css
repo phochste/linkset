@@ -2,13 +2,25 @@
    Even if used, you're likely to want to do more
 */
 
-p.metaElement span.metaTitle {
-  width: 10em;
-  display: inline-block;
+/* Small screens */
+
+.error {
+  background-color: red;
+  color: white;
+}
+
+
+dl#linkList dd {
+  white-space: nowrap;
+  margin-left: .5em;
 }
 
 dl#linkList dd.href, dl#linkList dt.linkType {
   margin-top:0.5em;
+}
+
+dl#linkList dd {
+  font-size: small;
 }
 
 dl#linkList dd span {
@@ -17,14 +29,35 @@ dl#linkList dd span {
 }
 
 dl#linkList dd span.toTitle {
-  margin-left: 7em;
+  margin-left: 0;
 }
 
 dl#linkList dd.href span.toTitle {
   margin-left: 0;
 }
 
-.error {
-  background-color: red;
-  color: white;
+p.metaElement span.metaTitle {
+  width: auto;
+  display: inline;
+
+
+p.metaElement span.metaValue {
+  display: block;
+  margin-left:0.5em;
+  font-size: small;
+}
+
+/* wider screens */
+
+@media screen and (min-width: 600px) {
+  p.metaElement span.metaTitle {
+    width: 11em;
+    display: inline-block;
+  }
+
+  p.metaElement span.metaValue {
+    display: inline;
+    margin-left:0;
+    font-size: small;
+  }
 }
