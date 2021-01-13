@@ -8,6 +8,7 @@
 const RabinRegEx = /^((https?):)(\/\/((([^\/?#]*)@)?([^\/?#:]*)(:([^\/?#]*))?))?([^?#]*)(\?([^#]*))?(#(.*))?/;
 const metaElementClass = 'metaElement';
 const metaTitleClass = 'metaTitle'; // Used in CSS rules
+const metaValueClass = 'metaValue'; // Used in CSS rules
 const toTitleClass = 'toTitle';
 
 function linksetViz(lsIn, displayElement) {
@@ -24,11 +25,14 @@ function linksetViz(lsIn, displayElement) {
         let p = document.createElement('p');
         p.className = metaElementClass;
         p.classList.add('anchor');
-        let span = document.createElement('span');
-        span.className = metaTitleClass;
-        span.appendChild(document.createTextNode('GS1 Digital Link URI: '));
-        p.appendChild(span);
-        p.appendChild(document.createTextNode(linkset[context].anchor));
+        let titleSpan = document.createElement('span');
+        titleSpan.className = metaTitleClass;
+        titleSpan.appendChild(document.createTextNode('GS1 Digital Link URI: '));
+        p.appendChild(titleSpan);
+        let valueSpan = document.createElement('span');
+        valueSpan.className = metaValueClass;
+        valueSpan.appendChild(document.createTextNode(linkset[context].anchor));
+        p.appendChild(valueSpan);
         displayElement.appendChild(p);
 
         // And output any other info
@@ -38,11 +42,14 @@ function linksetViz(lsIn, displayElement) {
           p = document.createElement('p');
           p.className = metaElementClass;
           p.classList.add('itemDescription');
-          span = document.createElement('span');
-          span.className = metaTitleClass;
-          span.appendChild(document.createTextNode('Item: '));
-          p.appendChild(span);
-          p.appendChild(document.createTextNode(linkset[context].itemDescription));
+          titleSpan = document.createElement('span');
+          titleSpan.className = metaTitleClass;
+          titleSpan.appendChild(document.createTextNode('Item: '));
+          p.appendChild(titleSpan);
+          valueSpan = document.createElement('span');
+          valueSpan.className = metaValueClass;
+          valueSpan.appendChild(document.createTextNode(linkset[context].itemDescription));
+          p.appendChild(valueSpan);
           displayElement.appendChild(p);
         }
 
@@ -51,12 +58,15 @@ function linksetViz(lsIn, displayElement) {
           p = document.createElement('p');
           p.className = metaElementClass;
           p.classList.add('lastModified');
-          span = document.createElement('span');
-          span.className = metaTitleClass;
-          span.appendChild(document.createTextNode('Last modified: '));
-          p.appendChild(span);
+          titleSpan = document.createElement('span');
+          titleSpan.className = metaTitleClass;
+          titleSpan.appendChild(document.createTextNode('Last modified: '));
+          p.appendChild(titleSpan);
+          valueSpan = document.createElement('span');
+          valueSpan.className = metaValueClass;
           let d = new Date(linkset[context].unixtime*1000);
-          p.appendChild(document.createTextNode(d.toISOString().replace('.000Z','Z')));
+          valueSpan.appendChild(document.createTextNode(d.toISOString().replace('.000Z','Z')));
+          p.appendChild(valueSpan);
           displayElement.appendChild(p);
         }
 
