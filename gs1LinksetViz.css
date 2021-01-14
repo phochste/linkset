@@ -10,29 +10,29 @@
 }
 
 
-dl#linkList dd {
+dl.linkList dd {
   white-space: nowrap;
   margin-left: .5em;
 }
 
-dl#linkList dd.href, dl#linkList dt.linkType {
+dl.linkList dd.href, dl.linkList dt.linkType {
   margin-top:0.5em;
 }
 
-dl#linkList dd {
+dl.linkList dd {
   font-size: small;
 }
 
-dl#linkList dd span {
+dl.linkList dd span {
   display: inline-block;
   width:7em;
 }
 
-dl#linkList dd span.toTitle {
+dl.linkList dd span.toTitle {
   margin-left: 0;
 }
 
-dl#linkList dd.href span.toTitle {
+dl.linkList dd.href span.toTitle {
   margin-left: 0;
 }
 

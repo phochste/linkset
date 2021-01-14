@@ -75,7 +75,7 @@ function linksetViz(lsIn, displayElement) {
         // Each link type will be a dt, and we'll make things below it dds.
 
         let dl = document.createElement('dl');
-        dl.id = 'linkList';
+        dl.classList.add('linkList');
 
         for (linkType in linkset[context]) {
           // Ignore anythig that isn't a URL
