@@ -38,11 +38,12 @@ dl.linkList dd span.toTitle {
   margin-left: 0;
 }
 
-p.metaElement span.metaTitle {
+p.metaElement span.metaTitle, h2.lsSectionHead span.metaTitle {
   width: auto;
   display: inline;
+}
 
-p.metaElement span.metaValue {
+p.metaElement span.metaValue, h2.lsSectionHead span.metaValue {
   display: block;
   margin-left:0.5em;
   font-size: small;
@@ -51,12 +52,12 @@ p.metaElement span.metaValue {
 /* wider screens */
 
 @media screen and (min-width: 600px) {
-  p.metaElement span.metaTitle {
+  p.metaElement span.metaTitle, h2.lsSectionHead span.metaTitle {
     width: 11em;
     display: inline-block;
   }
 
-  p.metaElement span.metaValue {
+  p.metaElement span.metaValue, h2.lsSectionHead span.metaValue {
     display: inline;
     margin-left:0;
     font-size: small;
