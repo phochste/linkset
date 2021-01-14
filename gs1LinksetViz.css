@@ -2,13 +2,19 @@
    Even if used, you're likely to want to do more
 */
 
-/* Small screens */
+/* All screens */
+
+
+/* Linksets are shown in sections and the DL URI is the header but it doesn't need to look like the big h2 header that it is */
+
+section.lsSection h2.lsSectionHead {
+  font-size:100%;
+}
 
 .error {
   background-color: red;
   color: white;
 }
-
 
 dl.linkList dd {
   white-space: nowrap;
@@ -32,14 +38,9 @@ dl.linkList dd span.toTitle {
   margin-left: 0;
 }
 
-dl.linkList dd.href span.toTitle {
-  margin-left: 0;
-}
-
 p.metaElement span.metaTitle {
   width: auto;
   display: inline;
-
 
 p.metaElement span.metaValue {
   display: block;

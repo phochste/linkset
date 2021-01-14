@@ -21,25 +21,27 @@ function linksetViz(lsIn, displayElement) {
     // Each link context object MUST have an "anchor" member with a value that represents the link context.
     for (let context in linkset) {
       if (linkset[context].anchor !== undefined) {
+        // We have a linkset that we'll present in an HTML section
+        let section = document.createElement('section');
+        section.classList.add('lsSection');
         // Let's record the anchor
-        let p = document.createElement('p');
-        p.className = metaElementClass;
-        p.classList.add('anchor');
+        let sectionHead = document.createElement('h2');
+        sectionHead.classList.add('lsSectionHead');
         let titleSpan = document.createElement('span');
         titleSpan.className = metaTitleClass;
         titleSpan.appendChild(document.createTextNode('GS1 Digital Link URI: '));
-        p.appendChild(titleSpan);
+        sectionHead.appendChild(titleSpan);
         let valueSpan = document.createElement('span');
         valueSpan.className = metaValueClass;
         valueSpan.appendChild(document.createTextNode(linkset[context].anchor));
-        p.appendChild(valueSpan);
-        displayElement.appendChild(p);
+        sectionHead.appendChild(valueSpan);
+        section.appendChild(sectionHead);
 
         // And output any other info
         // The GS1 resolver provides an item description
 
         if (linkset[context].itemDescription !== undefined) {
-          p = document.createElement('p');
+          let p = document.createElement('p');
           p.className = metaElementClass;
           p.classList.add('itemDescription');
           titleSpan = document.createElement('span');
@@ -50,12 +52,12 @@ function linksetViz(lsIn, displayElement) {
           valueSpan.className = metaValueClass;
           valueSpan.appendChild(document.createTextNode(linkset[context].itemDescription));
           p.appendChild(valueSpan);
-          displayElement.appendChild(p);
+          section.appendChild(p);
         }
 
         // GS1 also provides a timestamp for the record that we can show
         if (linkset[context].unixtime !== undefined) {
-          p = document.createElement('p');
+          let p = document.createElement('p');
           p.className = metaElementClass;
           p.classList.add('lastModified');
           titleSpan = document.createElement('span');
@@ -67,7 +69,7 @@ function linksetViz(lsIn, displayElement) {
           let d = new Date(linkset[context].unixtime*1000);
           valueSpan.appendChild(document.createTextNode(d.toISOString().replace('.000Z','Z')));
           p.appendChild(valueSpan);
-          displayElement.appendChild(p);
+          section.appendChild(p);
         }
 
         // Now we want to work through all the link types and display the links
@@ -195,7 +197,8 @@ function linksetViz(lsIn, displayElement) {
             }
           }
         }
-        displayElement.appendChild(dl);
+        section.appendChild(dl);
+        displayElement.appendChild(section);
 
       } else {
         console.log('No anchor here');
