@@ -1,6 +1,7 @@
 {
   "@context": {
     "@vocab": "http://www.iana.org/assignments/relation/",
+    "@protected": true,
     "anchor":"@id",
     "href":"@id",
     "linkset": "@graph",
