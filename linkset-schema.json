@@ -1,0 +1,69 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "@id": "https://ref.gs1.org/standards/resolver/linkset-schema",
+    "title": "JSON schema for linksets as defined in RFC 9264",
+    "type": "object",
+    "properties": {
+      "linkset": {
+        "description": "The linkset",
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "anchor": {
+              "description": "The URL at the root of the linkset, a.k.a the link context",
+              "type": "string",
+              "format": "uri"
+            },
+            "patternProperties": {
+              "^.*$": {
+                "anyOf": [
+                  {
+                    "type": "string",
+                    "pattern": "^[a-z]+$"  // Matches only lowercase a-z
+                  },
+                  {
+                    "type": "string",
+                    "format": "uri"  // Matches valid URI format
+                  }
+                ],
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "href": {
+                      "description": "The target URL",
+                      "type": "string",
+                      "format": "uri"
+                    },
+                    "title": {
+                      "description": "A human-readable title for the link",
+                      "type": "string"
+                    },
+                    "hreflang": {
+                      "description": "The human language(s) of the target resource",
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "(^\\w{2}$)|(^\\w{2}-\\w{2}$)"
+                      }
+                    },
+                    "type": {
+                      "description": "The content type (MIME type) of the target resource",
+                      "type": "string",
+                      "pattern": "\\w+/[-+.\\w]+"
+                    }
+                  },
+                  "required": ["href"] // Makes href required
+                }
+              }
+            }
+          },
+          "required": ["anchor"] // makes anchor required
+        }
+      }
+    },
+    "required": [
+      "linkset"
+    ]
+  }
+  
