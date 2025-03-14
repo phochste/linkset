@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
     "@id": "https://ref.gs1.org/standards/resolver/linkset-schema",
-    "title": "JSON schema for linksets as defined in RFC 9264",
+    "title": "JSON schema for linksets as defined in RFC 9264 plus additional features in GS1-Conformant resolvers",
     "type": "object",
     "properties": {
         "linkset": {
@@ -19,14 +19,11 @@
                         "name": "Item description",
                         "description": "A description of the item. There are no restrictions on this so that, for example, it does not have to be a product's name",
                         "type": "string"
-                    }
-                },
-                "patternProperties": {
-                    "(?!(anchor|itemDescription))^([a-z]+$)|(^https?:\/\/[a-zA-z0-9./]+$)": {
-                        "title": "Link object schema",
-                        "description": "The schema for each link context object for each link relation",
-                        "type": "array",
-                        "items": {
+                    },
+                    "patternProperties": {
+                        "^https://(ref\\.)?gs1\\.org/voc/\\w+$": {
+                            "title": "Link object schema",
+                            "description": "The schema for each link relation type (linktype)",
                             "type": "object",
                             "properties": {
                                 "href": {
@@ -54,21 +51,24 @@
                                     "description": "The content type (MIME type) of the target resource",
                                     "type": "string",
                                     "pattern": "\\w+/[-+.\\w]+"
-                                }
-                            },
-                            "required": [
-                                "href",
-                                "title"
-                            ],
-                            "additionalProperties": false
+                                },
+                                "context": {
+                                    "name": "Context",
+                                    "description": "An additional descriptor for the link, typically a country or territory",
+                                    "type": "string"
+                                },
+                                "required": [
+                                    "href",
+                                    "title"
+                                ],
+                                "additionalProperties": false
+                            }
                         }
                     }
                 },
                 "required": [
-                    "anchor",
-                    "itemDescription"
-                ],
-                "additionalProperties": false
+                    "anchor"
+                ]
             }
         }
     },
@@ -76,4 +76,5 @@
         "linkset"
     ],
     "additionalProperties": false
-}
+  }
+  
