@@ -54,7 +54,20 @@
                                     "description": "The content type (MIME type) of the target resource",
                                     "type": "string",
                                     "pattern": "\\w+/[-+.\\w]+"
-                                }
+                                },
+                                  "context": {
+                                    "name":"Context",
+                                    "description":"Any additional descriptor for the link, typically a geography or jurisdiction in which the link applies",
+                                    "type":"array"
+                                  },
+                                  "fwqs" : {
+                                    "name":"Forward query strings",
+                                    "type": "boolean"
+                                  },
+                                  "public" : {
+                                    "name":"Link can be shared publicly",
+                                    "type": "boolean"
+                                  }
                             },
                             "required": [
                                 "href",
