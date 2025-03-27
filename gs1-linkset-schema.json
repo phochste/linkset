@@ -13,7 +13,7 @@
                     "anchor": {
                         "description": "The URL at the root of the linkset, a.k.a the link context",
                         "type": "string",
-                        "format": "uri"
+                        "format": "iri"
                     },
                     "itemDescription": {
                         "name": "Item description",
@@ -33,7 +33,7 @@
                                     "name": "href",
                                     "description": "The target URL",
                                     "type": "string",
-                                    "format": "uri"
+                                    "format": "iri"
                                 },
                                 "title": {
                                     "title": "title",
