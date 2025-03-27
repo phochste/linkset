@@ -13,7 +13,7 @@
                     "anchor": {
                         "description": "The URL at the root of the linkset, a.k.a the link context",
                         "type": "string",
-                        "pattern": "^((https?):)(\/\/((([^\/?#]*)@)?([^\/?#:]*)(:([^\/?#]*))?))?([^?#]*)(\?([^#]*))?(#(.*))?"
+                        "pattern": "^https?:\/\/[a-zA-z0-9./]+"
                     },
                     "itemDescription": {
                         "name": "Item description",
@@ -22,7 +22,7 @@
                     }
                 },
                 "patternProperties": {
-                    "(?!(anchor|itemDescription))^([a-z]+$)|(^https?:\/\/[a-zA-z0-9./]+$)": {
+                    "(?!(anchor|itemDescription))^([a-z-]+$)|(^https?:\/\/[a-zA-z0-9./]+$)": {
                         "title": "Link object schema",
                         "description": "The schema for each link context object for each link relation",
                         "type": "array",
@@ -33,7 +33,7 @@
                                     "name": "href",
                                     "description": "The target URL",
                                     "type": "string",
-                                    "pattern": "^((https?):)(\/\/((([^\/?#]*)@)?([^\/?#:]*)(:([^\/?#]*))?))?([^?#]*)(\?([^#]*))?(#(.*))?"
+                                    "pattern": "^https?:\/\/[a-zA-z0-9./]+"
                                 },
                                 "title": {
                                     "title": "title",
