@@ -13,7 +13,7 @@
                     "anchor": {
                         "description": "The URL at the root of the linkset, a.k.a the link context",
                         "type": "string",
-                        "format": "iri"
+                        "pattern": "^((https?):)(\/\/((([^\/?#]*)@)?([^\/?#:]*)(:([^\/?#]*))?))?([^?#]*)(\?([^#]*))?(#(.*))?"
                     },
                     "itemDescription": {
                         "name": "Item description",
@@ -33,7 +33,7 @@
                                     "name": "href",
                                     "description": "The target URL",
                                     "type": "string",
-                                    "format": "iri"
+                                    "pattern": "^((https?):)(\/\/((([^\/?#]*)@)?([^\/?#:]*)(:([^\/?#]*))?))?([^?#]*)(\?([^#]*))?(#(.*))?"
                                 },
                                 "title": {
                                     "title": "title",
