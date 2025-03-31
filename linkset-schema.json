@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/draft-07/schema#",
-    "@id": "https://ref.gs1.org/standards/resolver/linkset-schema",
+    "$id": "https://ref.gs1.org/standards/resolver/linkset-schema",
     "title": "JSON schema for linksets as defined in RFC 9264",
     "type": "object",
     "properties": {
@@ -25,7 +25,7 @@
                             "type": "object",
                             "properties": {
                                 "href": {
-                                    "name": "href",
+                                    "title": "href",
                                     "description": "The target URL",
                                     "type": "string",
                                     "format": "uri"
@@ -36,7 +36,7 @@
                                     "type": "string"
                                 },
                                 "hreflang": {
-                                    "name": "hreflang",
+                                    "title": "hreflang",
                                     "description": "The human language(s) of the target resource",
                                     "type": "array",
                                     "items": {
@@ -45,7 +45,7 @@
                                     }
                                 },
                                 "type": {
-                                    "name": "Type",
+                                    "title": "Type",
                                     "description": "The content type (MIME type) of the target resource",
                                     "type": "string",
                                     "pattern": "\\w+/[-+.\\w]+"
