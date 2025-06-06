@@ -17,12 +17,17 @@
                     },
                     "itemDescription": {
                         "name": "Item description",
-                        "description": "A description of the item. There are no restrictions on this so that, for example, it does not have to be a product's name",
+                        "description": "A description of the item. There are no restrictions on this so that, for example, it does not have to be a product's name. This has been deprecated in favour of description.",
+                        "type": "string"
+                    },
+                    "description": {
+                        "name": "Description",
+                        "description": "A description of the item. There are no restrictions on this so that, for example, it does not have to be a product's name. Preferred alternative to itemDescription which has been deprecated",
                         "type": "string"
                     }
                 },
                 "patternProperties": {
-                    "(?!(anchor|itemDescription))^([a-z-]+$)|(^https?:\/\/[a-zA-z0-9./]+$)": {
+                    "(?!(anchor|itemDescription|description))^([a-z-]+$)|(^https?:\/\/[a-zA-z0-9./]+$)": {
                         "title": "Link object schema",
                         "description": "The schema for each link context object for each link relation",
                         "type": "array",
@@ -77,9 +82,12 @@
                         }
                     }
                 },
+                  "oneOf": [
+   					{"required": ["itemDescription"]},
+    				{"required": ["description"]}
+  				],
                 "required": [
-                    "anchor",
-                    "itemDescription"
+                    "anchor"
                 ],
                 "additionalProperties": false
             }
