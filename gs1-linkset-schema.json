@@ -82,10 +82,6 @@
                         }
                     }
                 },
-                  "oneOf": [
-   					{"required": ["itemDescription"]},
-    				{"required": ["description"]}
-  				],
                 "required": [
                     "anchor"
                 ],
